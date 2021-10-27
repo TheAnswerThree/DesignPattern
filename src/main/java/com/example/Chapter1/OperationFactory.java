@@ -1,0 +1,25 @@
+package com.example.Chapter1;
+
+import com.example.Chapter1.Operation;
+import com.example.Chapter1.OperationAdd;
+
+public class OperationFactory {
+    public static Operation createOperate(String operate) {
+        Operation oper = null;
+        switch (operate) {
+            case "+":
+                oper = new OperationAdd();
+                break;
+            case "-":
+                oper = new OperationSub();
+                break;
+            case "*":
+                oper = new OperationMul();
+                break;
+            case "/":
+                oper = new OperationDiv();
+                break;
+        }
+        return oper;
+    }
+}
